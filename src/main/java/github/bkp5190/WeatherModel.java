@@ -1,4 +1,4 @@
-package main.java.github.bkp5190;
+package github.bkp5190;
 
 import java.net.http.HttpRequest;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package main.java.github.bkp5190;
+package github.bkp5190;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
