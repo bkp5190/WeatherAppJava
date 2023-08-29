@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "ZIP_CODE=${{ secrets.ZIP_CODE }}" >> $GITHUB_ENV
           echo "OPENWEATHERMAP_API_KEY=${{ secrets.OPENWEATHERMAP_API_KEY }}" >> $GITHUB_ENV
+          echo "OPENWEATHERMAP_URL=${{ secrets.OPENWEATHERMAP_URL }}" >> $GITHUB_ENV
 
       - name: Run Java application
         run: |
@@ -35,3 +36,5 @@ jobs:
         env:
           OPENWEATHERMAP_API_KEY: ${{ env.OPENWEATHERMAP_API_KEY }}
           ZIP_CODE: ${{ env.ZIP_CODE }}
+          OPENWEATHERMAP_URL: ${{ env.OPENWEATHERMAP_URL }}
+          
