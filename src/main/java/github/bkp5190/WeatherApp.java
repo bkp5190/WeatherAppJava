@@ -6,8 +6,6 @@ import org.json.JSONObject;
 public class WeatherApp {
     public static void main(String[] args) throws Exception {
 
-        System.out.println(System.getenv("DISPLAY"));
-        
         String apiKey = System.getenv("OPENWEATHERMAP_API_KEY");
         if (apiKey == null || apiKey.isEmpty()) {
             System.out.println("API key not set. Exiting...");

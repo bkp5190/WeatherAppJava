@@ -30,7 +30,8 @@ jobs:
 
       - name: Run Java application
         run: |
+          env
           java -cp target/my-weather-app-1.0.0.jar:lib/* github.bkp5190.WeatherApp
         env:
-          OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
-          ZIP_CODE: ${{ secrets.ZIP_CODE }}
+          OPENWEATHERMAP_API_KEY: ${{ env.OPENWEATHERMAP_API_KEY }}
+          ZIP_CODE: ${{ env.ZIP_CODE }}
