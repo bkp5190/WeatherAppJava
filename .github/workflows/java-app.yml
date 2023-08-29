@@ -26,7 +26,9 @@ jobs:
       - name: Set up environment variables
         run: |
           chmod +x set-env.sh
-          source set-env.sh
+          source ./set-env.sh
+          echo $OPENWEATHERMAP_API_KEY
+          echo $ZIP_CODE
 
       - name: Run Java application
         run: |
