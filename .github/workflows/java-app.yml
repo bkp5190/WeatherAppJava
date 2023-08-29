@@ -1,0 +1,32 @@
+name: Java Application Build and Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '20'  # Adjust the Java version as needed
+
+      - name: Build Java application
+        run: |
+          mvn clean install
+
+      - name: Set up environment variables
+        run: |
+          chmod +x set-env.sh
+          source set-env.sh
+
+      - name: Run Java application
+        run: |
+          java -cp target/my-weather-app-1.0.0.jar:lib/* main.java.github.bkp5190.WeatherApp
