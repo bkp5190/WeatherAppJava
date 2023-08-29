@@ -6,6 +6,8 @@ import org.json.JSONObject;
 public class WeatherApp {
     public static void main(String[] args) throws Exception {
 
+        System.out.println(System.getProperty("java.awt.headless"));
+
         String apiKey = System.getenv("OPENWEATHERMAP_API_KEY");
         if (apiKey == null || apiKey.isEmpty()) {
             System.out.println("API key not set. Exiting...");
@@ -46,7 +48,7 @@ public class WeatherApp {
             System.out.println("Temperature: " + temperature + "°C");
             System.out.println("Weather: " + description);
         } else {
-            // Initialize the GUI
+            // Initialize the GUI only if not in headless mode
             WeatherModel model = new WeatherModel(apiKey, zipCode, apiUrl);
             WeatherView view = new WeatherView();
             WeatherController controller = new WeatherController(view, model);
