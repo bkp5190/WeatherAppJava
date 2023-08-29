@@ -25,8 +25,7 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          chmod +x set-env.sh
-          source ./set-env.sh
+          export ZIP_CODE=$ZIP_CODE
           echo $ZIP_CODE
 
       - name: Run Java application
