@@ -6,8 +6,8 @@ import org.json.JSONObject;
 public class WeatherApp {
     public static void main(String[] args) throws Exception {
 
-        System.out.println(System.getProperty("java.awt.headless"));
-
+        System.out.println(System.getenv("DISPLAY"));
+        
         String apiKey = System.getenv("OPENWEATHERMAP_API_KEY");
         if (apiKey == null || apiKey.isEmpty()) {
             System.out.println("API key not set. Exiting...");
@@ -25,8 +25,9 @@ public class WeatherApp {
             System.out.println("Weather API URL is not set. Exiting...");
         }
 
-        String headlessProp = System.getProperty("java.awt.headless");
-        if (headlessProp != null && headlessProp.equals("true")) {
+        String display = System.getenv("DISPLAY");
+
+        if (display == null || display.isEmpty()) {
             // Handle headless mode (non-GUI)
             System.out.println("Running in headless mode (non-GUI).");
 
