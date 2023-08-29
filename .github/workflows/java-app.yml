@@ -25,9 +25,11 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          export ZIP_CODE=$ZIP_CODE
-          echo $ZIP_CODE
+          echo "export ZIP_CODE=${{ secrets.ZIP_CODE }}" >> $GITHUB_ENV
 
       - name: Run Java application
         run: |
           java -cp target/my-weather-app-1.0.0.jar:lib/* main.java.github.bkp5190.WeatherApp
+        env:
+          OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
+          ZIP_CODE: ${{ secrets.ZIP_CODE }}
