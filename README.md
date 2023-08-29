@@ -1,6 +1,8 @@
-## Getting Started
+## About
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Java App that uses the Open Weather API to display weather information based on the zip code provided.
+
+Currently set up with Maven for dependency management.
 
 ## Folder Structure
 
@@ -24,6 +26,7 @@ git clone https://github.com/bkp5190/WeatherAppJava.git
 mvn clean install
 
 source set-env.sh
-- Fill in API Key and Zip Code for Weather.
+- Fill in API Key for Open Weather API.
+- Fill in desired Zip Code to display weather.
 
-java -cp target/my-weather-app-1.0.0.jar:lib/\* main.java.github.bkp5190.WeatherApp
+java -cp target/my-weather-app-1.0.0.jar:lib/\* github.bkp5190.WeatherApp
