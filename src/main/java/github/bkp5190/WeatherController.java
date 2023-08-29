@@ -38,7 +38,6 @@ public class WeatherController {
                     description = elementObject.getString("description");
                 }
                 
-                System.out.println(description);
                 view.displayInformation(location, description, temperature);
             }
         });
