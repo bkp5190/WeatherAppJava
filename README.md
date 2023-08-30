@@ -30,3 +30,14 @@ source set-env.sh
 - Fill in desired Zip Code to display weather.
 
 java -cp target/my-weather-app-1.0.0.jar:lib/\* github.bkp5190.WeatherApp
+
+## Setup
+
+Currently, the application is set up with GitHub Actions to build and deploy. Given the nature of the application being UI
+focused, it will run in a headless mode in the pipeline to account.
+
+## Work To Do
+
+Set up functionality to pass in zip code for custom data.
+
+Convert to using JavaFX instead of Swing
